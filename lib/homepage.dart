@@ -48,80 +48,165 @@ class _HomepageState extends State<Homepage> {
           SizedBox(
             height: 15,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+          Container(
+            height: 110,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(100)),
+                      child: Icon(
+                        Icons.laptop,
+                        size: 50,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text("Laptop")
+                  ],
+                ),
+                SizedBox(width: 10),
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(100)),
+                      child: Icon(
+                        Icons.menu_book_rounded,
+                        size: 50,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text("Book")
+                  ],
+                ),
+                SizedBox(width: 10),
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(100)),
+                      child: Icon(
+                        Icons.toys,
+                        size: 50,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text("Toys")
+                  ],
+                ),
+                SizedBox(width: 10),
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(100)),
+                      child: Icon(
+                        Icons.electrical_services,
+                        size: 50,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text("electricity")
+                  ],
+                ),
+                SizedBox(width: 10),
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(100)),
+                      child: Icon(
+                        Icons.electrical_services,
+                        size: 50,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text("electricity")
+                  ],
+                ),
+                SizedBox(width: 10),
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(100)),
+                      child: Icon(
+                        Icons.electrical_services,
+                        size: 50,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text("electricity")
+                  ],
+                ),
+                SizedBox(width: 10),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 15),
+            child: Text(
+              "Best Selling",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+            ),
+          ),
+          GridView(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             children: [
-              Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(100)),
-                    child: Icon(
-                      Icons.laptop,
-                      size: 50,
-                    ),
+              Card(
+                child: Container(
+                  padding: EdgeInsets.only(bottom: 20),
+                  color: Colors.grey[200],
+                  child: Image(
+                    image: AssetImage("images/Laptop.jpg"),
+                    height: 150,
+                    fit: BoxFit.fill,
                   ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text("Laptop")
-                ],
+                ),
               ),
-              Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(100)),
-                    child: Icon(
-                      Icons.menu_book_rounded,
-                      size: 50,
+              Card(
+                child: Container(
+                  padding: EdgeInsets.all(20),
+                  color: Colors.grey[200],
+                  width: 300,
+                  child: Image(
+                    image: AssetImage(
+                      "images/Watch.jpg",
                     ),
+                    fit: BoxFit.fill,
+                    height: 150,
                   ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text("Book")
-                ],
-              ),
-              Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(100)),
-                    child: Icon(
-                      Icons.toys,
-                      size: 50,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text("Toys")
-                ],
-              ),
-              Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(100)),
-                    child: Icon(
-                      Icons.electrical_services,
-                      size: 50,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text("electricity")
-                ],
+                ),
               )
             ],
           )
