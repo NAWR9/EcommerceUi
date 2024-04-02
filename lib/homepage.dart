@@ -8,6 +8,30 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  List Categories = [
+    {"icon": Icons.laptop, "name": "Laptop"},
+    {"icon": Icons.menu_book_rounded, "name": "Book"},
+    {"icon": Icons.toys, "name": "Toys"},
+    {"icon": Icons.electrical_services_rounded, "name": "Electricity 1"},
+    {"icon": Icons.electrical_services_rounded, "name": "Electricity 2"},
+    {"icon": Icons.electrical_services_rounded, "name": "Electricity 3"}
+  ];
+
+  List bestSelling = [
+    {
+      "image": "images/Laptop.jpg",
+      "title": "Laptop",
+      "description": "Good fine laptop",
+      "price": "350\$"
+    },
+    {
+      "image": "images/Watch.png",
+      "title": "Watch",
+      "description": "Good fine watch",
+      "price": "150\$"
+    }
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,124 +74,30 @@ class _HomepageState extends State<Homepage> {
           ),
           Container(
             height: 110,
-            child: ListView(
+            child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              children: [
-                Column(
+              itemCount: Categories.length,
+              itemBuilder: (context, index) {
+                return Column(
                   children: [
                     Container(
                       padding: const EdgeInsets.all(15),
+                      margin: EdgeInsets.only(right: 7),
                       decoration: BoxDecoration(
                           color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(100)),
-                      child: const Icon(
-                        Icons.laptop,
+                      child: Icon(
+                        Categories[index]["icon"],
                         size: 50,
                       ),
                     ),
                     const SizedBox(
                       height: 5,
                     ),
-                    Text("Laptop")
+                    Text(Categories[index]["name"])
                   ],
-                ),
-                const SizedBox(width: 10),
-                Column(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(100)),
-                      child: const Icon(
-                        Icons.menu_book_rounded,
-                        size: 50,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text("Book")
-                  ],
-                ),
-                const SizedBox(width: 10),
-                Column(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(100)),
-                      child: const Icon(
-                        Icons.toys,
-                        size: 50,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    const Text("Toys")
-                  ],
-                ),
-                SizedBox(width: 10),
-                Column(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(100)),
-                      child: const Icon(
-                        Icons.electrical_services,
-                        size: 50,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text("electricity")
-                  ],
-                ),
-                const SizedBox(width: 10),
-                Column(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(100)),
-                      child: const Icon(
-                        Icons.electrical_services,
-                        size: 50,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text("electricity")
-                  ],
-                ),
-                SizedBox(width: 10),
-                Column(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(100)),
-                      child: const Icon(
-                        Icons.electrical_services,
-                        size: 50,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    const Text("electricity")
-                  ],
-                ),
-                const SizedBox(width: 10),
-              ],
+                );
+              },
             ),
           ),
           Container(
@@ -177,101 +107,59 @@ class _HomepageState extends State<Homepage> {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
             ),
           ),
-          GridView(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 10,
-              mainAxisExtent: 270,
-            ),
-            children: [
-              Card(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(20),
-                      color: Colors.grey[200],
-                      width: 300,
-                      child: Image.asset(
-                        "images/Laptop.jpg",
-                        height: 120,
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 8, top: 4),
-                      child: Text(
-                        "Laptop",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 8),
-                      child: Text(
-                        "Good fine laptop",
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 8),
-                      child: Text(
-                        "350\$",
-                        style: TextStyle(
-                            color: Colors.amber,
-                            fontSize: 19,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ],
-                ),
+          GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 10,
+                mainAxisExtent: 270,
               ),
-              Card(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(20),
-                      color: Colors.grey[200],
-                      width: 300,
-                      child: Image.asset(
-                        "images/Watch.png",
-                        height: 120,
-                        fit: BoxFit.fill,
+              itemCount: bestSelling.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(20),
+                        color: Colors.grey[200],
+                        width: 300,
+                        child: Image.asset(
+                          bestSelling[index]["image"],
+                          height: 120,
+                          fit: BoxFit.fill,
+                        ),
                       ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 8, top: 4),
-                      child: Text(
-                        "Watch",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+                      Padding(
+                        padding: EdgeInsets.only(left: 8, top: 4),
+                        child: Text(
+                          bestSelling[index]["title"],
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
                       ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 8),
-                      child: Text(
-                        "Good fine Watch",
-                        style: TextStyle(color: Colors.grey),
+                      Padding(
+                        padding: EdgeInsets.only(left: 8),
+                        child: Text(
+                          bestSelling[index]["description"],
+                          style: TextStyle(color: Colors.grey),
+                        ),
                       ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 8),
-                      child: Text(
-                        "150\$",
-                        style: TextStyle(
-                            color: Colors.amber,
-                            fontSize: 19,
-                            fontWeight: FontWeight.bold),
+                      Padding(
+                        padding: EdgeInsets.only(left: 8),
+                        child: Text(
+                          bestSelling[index]["price"],
+                          style: TextStyle(
+                              color: Colors.amber,
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          )
+                    ],
+                  ),
+                );
+              })
         ],
       ),
     ));
