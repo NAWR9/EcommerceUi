@@ -9,8 +9,8 @@ class itemDetails extends StatefulWidget {
 }
 
 class _itemDetailsState extends State<itemDetails> {
-  TextStyle col = TextStyle(color: Colors.black);
-  TextStyle col2 = TextStyle(color: Colors.grey);
+  TextStyle col = const TextStyle(color: Colors.black);
+  TextStyle col2 = const TextStyle(color: Colors.grey);
   TextStyle? temp;
 
   @override
@@ -28,9 +28,9 @@ class _itemDetailsState extends State<itemDetails> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.person_2_outlined), label: "*")
           ]),
-      endDrawer: Drawer(),
+      endDrawer: const Drawer(),
       appBar: AppBar(
-        iconTheme: IconThemeData(size: 35),
+        iconTheme: const IconThemeData(size: 35),
         centerTitle: true,
         title:
             const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -50,12 +50,12 @@ class _itemDetailsState extends State<itemDetails> {
           Container(
               color: Colors.grey[200],
               child: Image.asset(widget.data["image"])),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Text(
             widget.data["title"],
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 30,
             ),
@@ -66,7 +66,7 @@ class _itemDetailsState extends State<itemDetails> {
             style: const TextStyle(fontSize: 18, color: Colors.grey),
             textAlign: TextAlign.center,
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Text(
@@ -77,7 +77,7 @@ class _itemDetailsState extends State<itemDetails> {
                 fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Row(
@@ -88,23 +88,23 @@ class _itemDetailsState extends State<itemDetails> {
                 style: TextStyle(color: Colors.grey[700], fontSize: 15),
               ),
               Container(
-                  margin: EdgeInsets.only(left: 15, right: 5),
+                  margin: const EdgeInsets.only(left: 15, right: 5),
                   width: 20,
                   height: 20,
                   decoration: BoxDecoration(
                       border: Border.all(color: Colors.orange),
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.grey)),
-              Text("Grey"),
+              const Text("Grey"),
               Container(
-                margin: EdgeInsets.only(left: 15, right: 5),
+                margin: const EdgeInsets.only(left: 15, right: 5),
                 width: 20,
                 height: 20,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.black),
               ),
-              Text("Grey"),
+              const Text("Grey"),
             ],
           ),
           const SizedBox(
@@ -129,37 +129,37 @@ class _itemDetailsState extends State<itemDetails> {
                 )),
             TextButton(
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   "40",
                   style: TextStyle(color: Colors.grey),
                 )),
             TextButton(
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   "41",
                   style: TextStyle(color: Colors.grey),
                 )),
             TextButton(
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   "42",
                   style: TextStyle(color: Colors.grey),
                 )),
             TextButton(
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   "43",
                   style: TextStyle(color: Colors.grey),
                 )),
           ]),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 60, vertical: 5),
+            margin: const EdgeInsets.symmetric(horizontal: 60, vertical: 5),
             child: MaterialButton(
               height: 50,
               color: Colors.black,
               textColor: Colors.white,
               onPressed: () {},
-              child: Text("Add to cart"),
+              child: const Text("Add to cart"),
             ),
           )
         ],

@@ -83,7 +83,7 @@ class _HomepageState extends State<Homepage> {
                       child: TextFormField(
                     decoration: InputDecoration(
                         hintText: "Search",
-                        prefixIcon: Icon(Icons.search),
+                        prefixIcon: const Icon(Icons.search),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide.none),
@@ -91,7 +91,7 @@ class _HomepageState extends State<Homepage> {
                         filled: true),
                   )),
                   const Padding(
-                    padding: const EdgeInsets.only(left: 15),
+                    padding: EdgeInsets.only(left: 15),
                     child: Icon(
                       Icons.menu,
                       size: 37,
@@ -119,7 +119,7 @@ class _HomepageState extends State<Homepage> {
                       children: [
                         Container(
                           padding: const EdgeInsets.all(15),
-                          margin: EdgeInsets.only(right: 7),
+                          margin: const EdgeInsets.only(right: 7),
                           decoration: BoxDecoration(
                               color: Colors.grey[200],
                               borderRadius: BorderRadius.circular(100)),
@@ -178,25 +178,25 @@ class _HomepageState extends State<Homepage> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 8, top: 4),
+                              padding: const EdgeInsets.only(left: 8, top: 4),
                               child: Text(
                                 bestSelling[index]["title"],
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 8),
+                              padding: const EdgeInsets.only(left: 8),
                               child: Text(
                                 bestSelling[index]["description"],
-                                style: TextStyle(color: Colors.grey),
+                                style: const TextStyle(color: Colors.grey),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 8),
+                              padding: const EdgeInsets.only(left: 8),
                               child: Text(
                                 bestSelling[index]["price"],
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.amber,
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold),
