@@ -38,14 +38,14 @@ class _HomepageState extends State<Homepage> {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          Text(
+          const Text(
             "Categories",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Container(
@@ -56,22 +56,22 @@ class _HomepageState extends State<Homepage> {
                 Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
                           color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(100)),
-                      child: Icon(
+                      child: const Icon(
                         Icons.laptop,
                         size: 50,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Text("Laptop")
                   ],
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Column(
                   children: [
                     Container(
@@ -79,37 +79,56 @@ class _HomepageState extends State<Homepage> {
                       decoration: BoxDecoration(
                           color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(100)),
-                      child: Icon(
+                      child: const Icon(
                         Icons.menu_book_rounded,
                         size: 50,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Text("Book")
                   ],
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
                           color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(100)),
-                      child: Icon(
+                      child: const Icon(
                         Icons.toys,
                         size: 50,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
-                    Text("Toys")
+                    const Text("Toys")
                   ],
                 ),
                 SizedBox(width: 10),
+                Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(100)),
+                      child: const Icon(
+                        Icons.electrical_services,
+                        size: 50,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text("electricity")
+                  ],
+                ),
+                const SizedBox(width: 10),
                 Column(
                   children: [
                     Container(
@@ -117,12 +136,12 @@ class _HomepageState extends State<Homepage> {
                       decoration: BoxDecoration(
                           color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(100)),
-                      child: Icon(
+                      child: const Icon(
                         Icons.electrical_services,
                         size: 50,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Text("electricity")
@@ -132,80 +151,123 @@ class _HomepageState extends State<Homepage> {
                 Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
                           color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(100)),
-                      child: Icon(
+                      child: const Icon(
                         Icons.electrical_services,
                         size: 50,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
-                    Text("electricity")
+                    const Text("electricity")
                   ],
                 ),
-                SizedBox(width: 10),
-                Column(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(100)),
-                      child: Icon(
-                        Icons.electrical_services,
-                        size: 50,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text("electricity")
-                  ],
-                ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
               ],
             ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 15),
-            child: Text(
+            margin: const EdgeInsets.symmetric(vertical: 15),
+            child: const Text(
               "Best Selling",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
             ),
           ),
           GridView(
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 10,
+              mainAxisExtent: 270,
+            ),
             children: [
               Card(
-                child: Container(
-                  padding: EdgeInsets.only(bottom: 20),
-                  color: Colors.grey[200],
-                  child: Image(
-                    image: AssetImage("images/Laptop.jpg"),
-                    height: 150,
-                    fit: BoxFit.fill,
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(20),
+                      color: Colors.grey[200],
+                      width: 300,
+                      child: Image.asset(
+                        "images/Laptop.jpg",
+                        height: 120,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 8, top: 4),
+                      child: Text(
+                        "Laptop",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 8),
+                      child: Text(
+                        "Good fine laptop",
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 8),
+                      child: Text(
+                        "350\$",
+                        style: TextStyle(
+                            color: Colors.amber,
+                            fontSize: 19,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Card(
-                child: Container(
-                  padding: EdgeInsets.all(20),
-                  color: Colors.grey[200],
-                  width: 300,
-                  child: Image(
-                    image: AssetImage(
-                      "images/Watch.jpg",
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(20),
+                      color: Colors.grey[200],
+                      width: 300,
+                      child: Image.asset(
+                        "images/Watch.png",
+                        height: 120,
+                        fit: BoxFit.fill,
+                      ),
                     ),
-                    fit: BoxFit.fill,
-                    height: 150,
-                  ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 8, top: 4),
+                      child: Text(
+                        "Watch",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 8),
+                      child: Text(
+                        "Good fine Watch",
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 8),
+                      child: Text(
+                        "150\$",
+                        style: TextStyle(
+                            color: Colors.amber,
+                            fontSize: 19,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
                 ),
               )
             ],
