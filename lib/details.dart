@@ -110,50 +110,73 @@ class _itemDetailsState extends State<itemDetails> {
           const SizedBox(
             height: 10,
           ),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Text(
-              "Size:",
-              style: TextStyle(color: Colors.grey[700], fontSize: 15),
+          SizedBox(
+            height: 40,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.only(
+                left: 50,
+              ),
+              children: [
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text(
+                    "Size:",
+                    style: TextStyle(color: Colors.grey[700], fontSize: 15),
+                  ),
+                  TextButton(
+                      onPressed: () {
+                        setState(() {
+                          temp = col;
+                          col = col2;
+                          col2 = temp!;
+                        });
+                      },
+                      child: Text(
+                        "39",
+                        style: col,
+                      )),
+                  TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "40",
+                        style: TextStyle(color: Colors.grey),
+                      )),
+                  TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "41",
+                        style: TextStyle(color: Colors.grey),
+                      )),
+                  TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "42",
+                        style: TextStyle(color: Colors.grey),
+                      )),
+                  TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "43",
+                        style: TextStyle(color: Colors.grey),
+                      )),
+                  TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "44",
+                        style: TextStyle(color: Colors.grey),
+                      )),
+                  TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "45",
+                        style: TextStyle(color: Colors.grey),
+                      )),
+                ]),
+              ],
             ),
-            TextButton(
-                onPressed: () {
-                  setState(() {
-                    temp = col;
-                    col = col2;
-                    col2 = temp!;
-                  });
-                },
-                child: Text(
-                  "39",
-                  style: col,
-                )),
-            TextButton(
-                onPressed: () {},
-                child: const Text(
-                  "40",
-                  style: TextStyle(color: Colors.grey),
-                )),
-            TextButton(
-                onPressed: () {},
-                child: const Text(
-                  "41",
-                  style: TextStyle(color: Colors.grey),
-                )),
-            TextButton(
-                onPressed: () {},
-                child: const Text(
-                  "42",
-                  style: TextStyle(color: Colors.grey),
-                )),
-            TextButton(
-                onPressed: () {},
-                child: const Text(
-                  "43",
-                  style: TextStyle(color: Colors.grey),
-                )),
-          ]),
+          ),
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 60, vertical: 5),
+            margin: const EdgeInsets.symmetric(horizontal: 60, vertical: 10),
             child: MaterialButton(
               height: 50,
               color: Colors.black,

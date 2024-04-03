@@ -109,7 +109,7 @@ class _HomepageState extends State<Homepage> {
               const SizedBox(
                 height: 15,
               ),
-              Container(
+              SizedBox(
                 height: 110,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -150,7 +150,7 @@ class _HomepageState extends State<Homepage> {
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 10,
-                    mainAxisExtent: 270,
+                    mainAxisExtent: 300,
                   ),
                   itemCount: bestSelling.length,
                   itemBuilder: (context, index) {
